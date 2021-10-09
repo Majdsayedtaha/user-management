@@ -1,0 +1,37 @@
+@import '../_variables';
+.user-management {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    
+    &::after {
+        content: '';
+        width: 100%;
+        background-color: $secondary-color;
+        height: 1px;
+        position: absolute;
+        bottom: -10px;
+    }
+ 
+    button {
+        padding: 10px 20px;
+        font-weight: bold;
+        transition: .3s;
+        margin-left: 10px;
+        border-radius: 20px;
+    }
+    .add-user {
+        background-color: #3cad82;
+        &:hover {
+            background-color: #3cad82a4;
+        }
+    }
+    .invite-user {
+        background-color: #ffb758;
+        &:hover {
+            background-color: #ffb7589d;
+        }
+    }
+}

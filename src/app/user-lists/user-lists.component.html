@@ -1,0 +1,46 @@
+
+    <div class="user-list">
+        <h3><span class="material-icons"> local_mall </span>User Lists</h3>
+        <div class="icons">
+            <span class="material-icons"> search </span>
+            <span class="material-icons"> analytics </span>
+            <span class="material-icons"> adf_scanner </span>
+        </div>
+    </div>
+    <table class="data-table">
+        <caption>User Lists</caption>
+        <thead>
+            <tr>
+                <th>No.</th>
+                <th>Name</th>
+                <th>Role</th>
+                <th>Email</th>
+                <th>User Since</th>
+                <th>Status</th>
+                <th>Edit Field</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="tb-row" *ngFor="let user of user; let i = index;">
+                <td>{{i + 1}}</td>
+                <td>{{user.name}}</td>
+                <td>
+                    <span class="role" *ngIf="user.role[0] != null   ">{{user.role[0]}}</span>
+                    <span class="role" *ngIf="user.role[1] != null  ">{{user.role[1]}}</span>
+                    <span class="role" *ngIf="user.role[2] != null  ">{{user.role[2]}}</span>
+                </td>
+                <td>{{user.email}}</td>
+                <td>{{user.since}}</td>
+                <td class="toggle">
+                    <label class="switch">
+            <input type="checkbox" checked *ngIf="user.status == true">
+            <input id="not-active" type="checkbox" *ngIf="user.status == false">
+            <span class="slider round"></span>
+          </label>
+                </td>
+                <td class="edit-icon">
+                    <span class="material-icons"> edit_note </span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
